@@ -1,0 +1,34 @@
+# Declaración de LIMIT
+
+La declaración `LIMIT` en SQL es una herramienta simple pero poderosa para controlar el número de registros devueltos por una consulta. Esta característica es particularmente útil para gestionar grandes conjuntos de datos y optimizar el rendimiento de las consultas.
+
+La declaración `LIMIT` restringe el número de filas devueltas por una consulta. Es especialmente útil cuando necesitas trabajar con un subconjunto de datos o al implementar características como la paginación en aplicaciones.
+
+### Sintaxis Básica de LIMIT
+
+```sql
+SELECT column_names FROM table_name [WHERE conditions] [ORDER BY expression [ASC | DESC]] LIMIT row_count;
+```
+### Ejemplos de Uso de LIMIT
+**Limitando el Número de Registros**:
+
+```sql
+SELECT * FROM customer WHERE age >= 25 ORDER BY age DESC LIMIT 8;
+```
+Esta consulta devolverá los 8 clientes más mayores que tengan al menos 25 años, ordenados en orden descendente por edad.
+
+**Combinando LIMIT con ORDER BY**:
+```sql
+SELECT * FROM customer WHERE age >= 25 ORDER BY age ASC LIMIT 10;
+```
+Esta consulta devolverá los 10 clientes más jóvenes que tengan al menos 25 años, ordenados en orden ascendente por edad.
+
+### Beneficios de Usar LIMIT
+- **Rendimiento**: Reduce la carga en la base de datos limitando el número de filas procesadas y devueltas.
+- **Eficiencia**: Útil para probar rápidamente consultas o cuando solo necesitas un número específico de filas.
+- **Practicidad**: Esencial para implementar la paginación en aplicaciones que muestran grandes conjuntos de datos.
+
+### Consejos para Usar LIMIT
+- **Ordenación**: Combina `LIMIT` con `ORDER BY` para controlar qué subconjunto de filas se devuelve.
+- **Pruebas**: Usa `LIMIT` para probar consultas en tablas grandes sin procesar toda la tabla.
+- **Paginación**: Implementa la paginación en tus aplicaciones utilizando `LIMIT` con un desplazamiento.

@@ -1,0 +1,30 @@
+## Sentencia INSERT INTO
+
+La sentencia `INSERT INTO` es una parte fundamental de SQL, utilizada para agregar nuevos registros (filas) a una tabla en una base de datos. Comprender cómo usar esta sentencia es crucial para gestionar y actualizar los datos en tus bases de datos.
+
+### ¿Qué es la Sentencia INSERT INTO?
+
+La sentencia `INSERT INTO` te permite insertar nuevos datos en una tabla. Cada fila en una tabla representa un registro, y con `INSERT INTO`, puedes agregar nuevos registros con valores especificados en las columnas.
+
+#### Características Clave de INSERT INTO
+- **Flexibilidad**: Puedes elegir insertar valores en todas las columnas o especificar en qué columnas insertar.
+- **Integridad de los Datos**: Al insertar datos, es importante asegurar que los nuevos datos cumplan con las restricciones establecidas en el esquema de la tabla (como tipos de datos, restricciones NOT NULL, etc.).
+
+### Sintaxis Básica
+La sintaxis básica de la sentencia `INSERT INTO` varía ligeramente dependiendo de si estás insertando datos en todas las columnas o en columnas específicas.
+
+### Sintaxis
+
+```sql
+INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+```
+
+### Ejemplo
+- Inserting una sola columna:
+```sql
+INSERT INTO customer_table (cust_id, first_name, age, email_id) VALUES (2, 'Dee', 22, 'd@xyz.com');
+```
+Insertando multples columnas:
+```sql
+INSERT INTO customer_table VALUES (1, 'Ee', 'Ef', 35, 'ef@xyz.com'), (1, 'Gee', 'Eh', 42, 'gh@xyz.com');
+```

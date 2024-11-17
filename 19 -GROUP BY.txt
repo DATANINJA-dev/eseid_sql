@@ -1,0 +1,48 @@
+## Declaración GROUP BY
+
+La cláusula `GROUP BY` es una herramienta poderosa en SQL utilizada en una declaración `SELECT` para agrupar filas que tienen los mismos valores en columnas especificadas. A menudo se utiliza con funciones agregadas (COUNT, MAX, MIN, SUM, AVG) para realizar cálculos en cada grupo de filas.
+
+### Sintaxis de `GROUP BY`
+
+```sql
+SELECT column_name1, aggregate_function(column_name2)
+FROM table_name
+GROUP BY column_name1;
+```
+
+### Ejemplos de Uso de `GROUP BY`
+
+1. **Contando Clientes en Cada Región**
+
+   ```sql
+   SELECT region, COUNT(customer_id) AS customer_count
+   FROM customer
+   GROUP BY region;
+   ```
+
+   Esta consulta cuenta el número de clientes en cada región.
+
+2. **Sumando la Cantidad Vendida por Producto**
+
+   ```sql
+   SELECT product_id, SUM(quantity) AS quantity_sold
+   FROM sales
+   GROUP BY product_id
+   ORDER BY quantity_sold DESC;
+   ```
+   Aquí, se suma la cantidad total vendida para cada producto.
+
+3. **Agregando Datos de Ventas por Cliente**
+
+   ```sql
+   SELECT customer_id,
+          MIN(sales) AS min_sales,
+          MAX(sales) AS max_sales,
+          AVG(sales) AS average_sales,
+          SUM(sales) AS total_sales
+   FROM sales
+   GROUP BY customer_id
+   ORDER BY total_sales DESC
+   LIMIT 5;
+   ```
+Esta consulta proporciona una agregación completa de los datos de ventas para cada cliente, mostrando las ventas mínimas, máximas, promedio y totales.

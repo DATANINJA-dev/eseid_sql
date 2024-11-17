@@ -1,0 +1,95 @@
+
+
+## Sentencia ALTER TABLE
+
+La sentencia `ALTER TABLE` en SQL es un comando versátil utilizado para modificar la estructura de una tabla existente de diversas maneras. Te permite adaptar la estructura de la tabla a medida que cambian tus requisitos de datos con el tiempo.
+
+La sentencia `ALTER TABLE` es esencial para cambiar la definición o estructura de una tabla sin necesidad de eliminarla y recrearla. Esta capacidad es crucial para mantener y actualizar bases de datos de manera dinámica.
+
+### Sintáxis Básica
+```sql
+ALTER TABLE table_name
+[Specify Actions];
+```
+### Acciones Posibles
+- **Columnas**: Añadir, eliminar, modificar o renombrar columnas.
+- **Restricciones**: Añadir o eliminar restricciones como NOT NULL, CHECK o FOREIGN KEY.
+- **Índice**: Añadir o eliminar índices (no cubierto en esta conferencia).
+
+### Modificar Columnas
+
+#### Añadir una Columna
+Para añadir una nueva columna a una tabla, especificas el nombre de la columna y su tipo de datos.
+
+##### Sintaxis
+
+```sql
+ALTER TABLE table_name
+ADD column_name Data_Type;
+```
+#### Eliminar una Columna
+Para eliminar una columna de una tabla, especificas el nombre de la columna.
+
+##### Sintaxis
+```sql
+ALTER TABLE table_name
+DROP column_name;
+```
+### Modificar y Renombrar Columnas
+
+#### Modificar el Tipo de Datos de una Columna
+Para cambiar el tipo de datos de una columna, especificas la columna y el nuevo tipo de datos.
+
+##### Sintaxis
+```sql
+ALTER TABLE table_name
+ALTER COLUMN column_name TYPE New_Data_Type;
+```
+#### Renombrar una Columna
+Para renombrar una columna, especificas el nombre actual de la columna y el nuevo nombre.
+
+##### Sintaxis
+```sql
+ALTER TABLE table_name
+RENAME COLUMN column_1 TO column_2;
+```
+### Añadir y Eliminar Restricciones
+
+#### Establecer una Restricción NOT NULL
+Para exigir que una columna no pueda tener valores NULL, usa la restricción SET NOT NULL.
+
+##### Sintaxis
+```sql
+ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
+```
+#### Eliminar una Restricción NOT NULL
+Para eliminar una restricción NOT NULL de una columna, utiliza DROP NOT NULL.
+
+##### Sintaxis
+```sql
+ALTER TABLE table_name ALTER COLUMN column_name DROP NOT NULL;
+```
+#### Añadir una Restricción CHECK
+Para añadir una condición que los datos en una columna deben cumplir, utiliza la restricción CHECK.
+
+##### Sintaxis
+```sql
+ALTER TABLE table_name ADD CONSTRAINT column_name CHECK (column_name >= 100);
+```
+#### Establecer una Clave Primaria
+Para designar una columna como clave primaria, utiliza la siguiente sintaxis.
+
+##### Sintaxis
+```sql
+ALTER TABLE table_name ADD PRIMARY KEY (column_name);
+```
+
+### Añadir una Restricción de Clave Extranjera
+Para crear una relación de clave extranjera con otra tabla, utiliza la restricción FOREIGN KEY.
+
+#### Sintaxis
+
+```sql
+ALTER TABLE child_table ADD CONSTRAINT child_column
+FOREIGN KEY (parent_column) REFERENCES parent_table;
+```

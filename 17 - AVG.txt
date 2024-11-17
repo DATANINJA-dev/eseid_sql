@@ -1,0 +1,34 @@
+## Declaración AVG
+
+La función `AVG` en SQL es una función agregada importante utilizada para calcular el valor promedio de una expresión especificada. Se utiliza ampliamente en análisis de datos para obtener perspectivas significativas de datos numéricos.
+
+La función `AVG` calcula el valor promedio de un conjunto de números. Se aplica a una columna y devuelve la media de los valores numéricos en esa columna. Esta función puede ser particularmente útil en análisis financiero, datos estadísticos y otras áreas donde los promedios son importantes.
+
+### Sintaxis Básica de AVG
+```sql
+SELECT AVG(aggregate_expression) FROM tables [WHERE conditions];
+```
+### Ejemplos de Uso de AVG
+**Calculando la Edad Promedio**:
+
+```sql
+SELECT AVG(age) AS 'Average Customer Age' FROM customer;
+```
+Esta consulta calcula la edad promedio de los clientes.
+
+**Calculando el Promedio Basado en un Valor Calculado**:
+
+```sql
+SELECT AVG(sales * 0.10) AS 'Average Commission Value' FROM sales;
+```
+Esta consulta calcula el valor promedio de la comisión, asumiendo que la comisión es el 10% de las ventas.
+
+### Cuándo Usar AVG
+- **Análisis de Tendencias**: Para entender las tendencias en los datos, como las ventas promedio durante un período o la edad promedio de los clientes.
+- **Análisis Comparativo**: Para comparar promedios entre diferentes grupos o categorías.
+- **Informes Financieros**: Esencial en escenarios financieros para calcular ingresos, costos o beneficios promedio.
+
+### Consejos para Usar AVG
+- **Solo Datos Numéricos**: La función `AVG` se aplica solo a tipos de datos numéricos.
+- **Combinación con GROUP BY**: A menudo se usa en conjunto con `GROUP BY` para cálculos promedio segmentados.
+- **Valores NULOS**: `AVG` excluye automáticamente los valores NULOS del cálculo.

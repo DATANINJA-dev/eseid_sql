@@ -1,0 +1,38 @@
+
+## Declaración COUNT
+
+La función `COUNT` en SQL es una función agregada fundamental y ampliamente utilizada que devuelve el conteo de una expresión, típicamente el número de filas que coinciden con una condición específica.
+
+La función `COUNT` se utiliza para determinar el número de filas en una tabla que satisfacen ciertos criterios. Se puede aplicar a cualquier columna, así como a toda la tabla, y es especialmente útil en análisis de datos e informes.
+
+### Sintaxis Básica de COUNT
+```sql
+SELECT COUNT(column_name) FROM table_name;
+```
+
+### Ejemplos de Uso de COUNT
+**Contando Todas las Filas en una Tabla**:
+
+```sql
+SELECT COUNT(*) FROM sales;
+```
+Esta consulta devuelve el número total de filas en la tabla `sales`.
+
+**Contando Filas Específicas Basadas en una Condición**:
+
+```sql
+SELECT COUNT(order_line) AS 'Number of Products Ordered', COUNT(DISTINCT order_id) AS 'Number of Orders' FROM sales WHERE customer_id = 'CG-12520';
+```
+This query counts the number of product orders and the distinct number of orders made by a specific customer.
+
+Esta consulta cuenta el número de pedidos de productos y el número distinto de pedidos realizados por un cliente específico.
+
+### Cuándo Usar COUNT
+- **Análisis de Datos**: Para determinar el tamaño de un conjunto de datos o el número de registros que cumplen ciertos criterios.
+- **Informes**: Útil en la generación de informes donde se requieren totales y subtotales.
+- **Verificación de Datos**: Para verificar el número de entradas en tablas, especialmente después de operaciones de manipulación de datos como INSERT o DELETE.
+
+### Consejos para Usar COUNT
+- **Rendimiento**: Aunque `COUNT(*)` es a menudo eficiente, ten en cuenta el rendimiento al contar grandes conjuntos de datos, especialmente cuando se usa `COUNT` en columnas específicas con condiciones.
+- **Uso con DISTINCT**: Combina `COUNT` con `DISTINCT` para contar valores únicos en una columna.
+- **Combinación con Otras Funciones**: `COUNT` puede combinarse con otras funciones agregadas de SQL como `SUM`, `AVG`, para un análisis de datos más completo.

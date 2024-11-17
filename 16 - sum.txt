@@ -1,0 +1,35 @@
+## Declaración SUM
+
+La función `SUM` en SQL es una función agregada crucial utilizada para calcular la suma total de una columna numérica. Es especialmente valiosa en análisis de datos para resumir y agregar datos.
+
+La función `SUM` te permite sumar todos los valores en una columna específica, proporcionando una suma total de esos valores. Esta función se puede aplicar a campos numéricos y a menudo se utiliza en conjunto con otras cláusulas de SQL como `WHERE` y `GROUP BY`.
+
+### Sintaxis Básica de SUM
+```sql
+SELECT SUM(aggregate_expression) FROM tables [WHERE conditions];
+```
+
+### Ejemplos de Uso de SUM
+**Calculando el Beneficio Total**:
+
+```sql
+SELECT SUM(Profit) AS 'Total Profit' FROM sales;
+```
+Esta consulta calcula el beneficio total de todas las ventas.
+
+**Sumando Valores Específicos Basados en una Condición**:
+
+```sql
+SELECT SUM(quantity) AS 'Total Quantity' FROM orders WHERE product_id = 'FUR-TA-10000577';
+```
+Esta consulta calcula la cantidad total de un producto específico vendido.
+
+### Cuándo Usar SUM
+- **Análisis de Datos e Informes**: Para calcular totales para datos financieros, ventas, inventarios, etc.
+- **Agregación de Datos**: Útil en la generación de informes y perspectivas donde se necesita datos agregados.
+- **Combinación con Agrupación**: A menudo se utiliza con `GROUP BY` para resumir datos en subgrupos.
+
+### Consejos para Usar SUM
+- **Tipo de Datos**: Asegúrate de que la columna que estás sumando sea de un tipo de datos numérico.
+- **Combinar con Otras Funciones**: `SUM` puede combinarse con otras funciones agregadas como `COUNT`, `AVG`, para un análisis de datos más completo.
+- **Consideraciones de Rendimiento**: Ten en cuenta el rendimiento al sumar grandes conjuntos de datos o consultas complejas.

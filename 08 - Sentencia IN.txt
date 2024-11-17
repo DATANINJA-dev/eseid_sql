@@ -1,0 +1,41 @@
+## Sentencia IN
+La condición `IN` en SQL es una herramienta poderosa para especificar múltiples valores en una cláusula `WHERE`. Es especialmente útil para simplificar consultas que de otro modo requerirían múltiples condiciones `OR`.
+La condición `IN` en SQL te permite especificar una lista de valores con los cuales una columna puede coincidir para ser incluida en los resultados. Es una abreviatura de una serie de condiciones `OR`, haciendo que tus consultas sean más concisas y legibles.
+
+### Sintaxis Básica de IN
+```sql
+SELECT column_name FROM table_name WHERE column_name IN (value1, value2, ...);
+```
+
+### Ejemplo de Uso de IN
+
+**Condición Simple IN**:
+```sql
+SELECT * FROM customer WHERE city IN ('Philadelphia', 'Seattle');
+```
+Esta consulta selecciona todos los registros de la tabla `customer` donde la columna `city` tiene un valor de 'Philadelphia' o 'Seattle'.
+
+### Beneficios de Usar IN
+- **Simplicidad**: Reduce la complejidad en consultas que requerirían múltiples condiciones `OR`.
+- **Legibilidad**: Hace que la consulta sea más legible y fácil de entender.
+- **Eficiencia**: En algunos casos, usar `IN` puede ser más eficiente que usar múltiples condiciones `OR`.
+
+## Cuándo Usar la Condición IN
+
+- **Filtrado sobre Múltiples Valores**: Usa `IN` cuando necesites filtrar una columna sobre una lista de múltiples valores específicos.
+- **Sustitución de Múltiples Condiciones OR**: Reemplaza múltiples condiciones `OR` con una cláusula `IN` para un código SQL más limpio y manejable.
+
+### Comparación con Condiciones OR
+
+La condición `IN` es funcionalmente similar a usar múltiples condiciones `OR`, pero con una mejora en la legibilidad y simplicidad. Por ejemplo:
+
+### Usando OR
+
+```sql
+SELECT * FROM customer WHERE city = 'Philadelphia' OR city = 'Seattle';
+```
+### Usando IN
+```sql
+SELECT * FROM customer WHERE city IN ('Philadelphia', 'Seattle');
+```
+Ambas consultas producen el mismo resultado, pero la condición `IN` simplifica la consulta.

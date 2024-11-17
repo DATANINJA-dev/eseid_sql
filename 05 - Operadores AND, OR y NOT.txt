@@ -1,0 +1,46 @@
+## Operadores AND, OR y NOT
+
+En SQL, los operadores AND, OR y NOT son esenciales para crear condiciones de consulta más complejas. Estos operadores lógicos te permiten combinar, negar o refinar múltiples condiciones en tus consultas, ofreciendo un mayor grado de control sobre los datos que recuperas.
+
+### El Papel de los Operadores Lógicos
+
+Los operadores lógicos en SQL se utilizan para mejorar las capacidades de la cláusula WHERE, permitiendo un filtrado de datos más sofisticado. Aquí hay una breve descripción de cada uno:
+
+- **AND**: Utilizado para combinar múltiples condiciones, donde cada condición dentro del AND debe ser verdadera para que la fila sea incluida en el conjunto de resultados.
+- **OR**: Utilizado para combinar múltiples condiciones, donde al menos una de las condiciones debe ser verdadera para que la fila sea incluida.
+- **NOT**: Utilizado para negar una condición, lo que significa que se considera la condición opuesta a lo que se afirma.
+
+### Uso de AND, OR y NOT en Consultas
+
+#### Operador AND
+
+El operador AND se utiliza cuando deseas recuperar registros que satisfacen todas las condiciones dadas.
+
+### Sintaxis
+Uso de AND:
+
+```sql
+SELECT column_name FROM table_name WHERE condition1 AND condition2;
+```
+Usando OR:
+```sql
+SELECT column_name FROM table_name WHERE condition1 OR condition2;
+```
+Usando NOT:
+```sql
+SELECT column_name FROM table_name WHERE NOT condition;
+```
+
+### Ejemplo
+Usando AND para combinar condiciones:
+```sql
+SELECT first_name, last_name FROM customer_table WHERE age > 20 AND age < 30;
+```
+Usando OR para expandir condiciones:
+```sql
+SELECT first_name, last_name FROM customer_table WHERE age < 20 OR age > 30;
+```
+Usando NOT para negar condiciones:
+```sql
+SELECT first_name, last_name FROM customer_table WHERE NOT age = 25;
+```

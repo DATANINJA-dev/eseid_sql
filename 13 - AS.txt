@@ -1,0 +1,28 @@
+## Declaración AS
+
+La palabra clave `AS` en SQL es una característica simple pero poderosa que te permite asignar alias a columnas o tablas. Esto puede hacer que tus consultas sean más legibles y puede ser particularmente útil en consultas complejas que involucran múltiples tablas o subconsultas.
+
+La palabra clave `AS` se utiliza para renombrar una columna o tabla dentro del alcance de una consulta SQL específica. Este cambio de nombre se conoce como alias y no afecta los nombres reales de las tablas o columnas en la base de datos.
+
+### Sintaxis Básica de AS
+```sql
+SELECT column_name AS column_alias FROM table_name;
+```
+
+### Ejemplos de Uso de AS
+**Asignando un Alias a una Columna**:
+
+```sql
+SELECT Cust_id AS 'Serial number', Customer_name AS name, Age AS Customer_age FROM Customer;
+```
+Esta consulta renombra la columna `Cust_id` como 'Número de serie', `Customer_name` como 'nombre' y `Age` como 'Edad del cliente' en la salida.
+
+### Beneficios de Usar Alias
+- **Claridad**: Hace que las consultas complejas sean más comprensibles, especialmente cuando las columnas o tablas tienen nombres largos o técnicos.
+- **Necesidad en Uniones**: Esencial cuando se unen tablas con nombres de columnas que se superponen para evitar ambigüedad.
+- **Formateo de Resultados**: Útil para formatear la salida de una consulta con fines de informe.
+
+### Consejos para Usar AS
+- **Legibilidad**: Elige alias que hagan claro el propósito de la consulta.
+- **Sintaxis Opcional**: La palabra clave `AS` es opcional. Puedes simplemente usar el nombre del alias junto al nombre de la columna o tabla.
+- **Sin Cambio Permanente**: Recuerda que usar un alias no cambia el nombre real de la columna o tabla en la base de datos; es solo para el ámbito de la consulta.

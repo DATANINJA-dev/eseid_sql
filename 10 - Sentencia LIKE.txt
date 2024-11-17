@@ -1,0 +1,53 @@
+## Sentencia LIKE
+
+La condición `LIKE` en SQL es una herramienta increíblemente útil para realizar coincidencias de patrones en consultas. Es especialmente útil cuando quieres buscar datos con patrones específicos dentro de una columna.
+
+La condición `LIKE` en SQL se utiliza para coincidencia de patrones y se emplea en una cláusula `WHERE` para buscar un patrón especificado en una columna.
+
+### Sintaxis Básica de LIKE
+```sql
+SELECT column_name FROM table_name WHERE column_name LIKE pattern;
+```
+
+### Comodines en LIKE
+Los comodines son caracteres especiales utilizados en la condición `LIKE` para representar uno o más caracteres en la coincidencia de patrones. Los comodines más utilizados son `%` y `_`.
+
+- **Comodín %**: Representa cualquier secuencia de caracteres (incluyendo cero caracteres).
+  - `A%` significa cualquier cadena que comience con 'A'.
+  - `%A` significa cualquier cadena que termine con 'A'.
+  - `A%B` significa cualquier cadena que comience con 'A' y termine con 'B'.
+
+- **Comodín _**: Representa un único caracter.
+  - `AB_C` significa cualquier cadena que comience con 'AB', seguido de cualquier caracter, y luego 'C'.
+
+### Ejemplos de Uso de LIKE
+**Comenzando con un Patrón Específico**:
+
+```sql
+SELECT * FROM customer_table WHERE first_name LIKE 'Jo%';
+```
+Esta consulta encontrará todos los registros donde el nombre comienza con 'Jo'.
+
+**Conteniendo un Patrón Específico**:
+```sql
+SELECT * FROM customer_table WHERE first_name LIKE '%od%';
+```
+Esta consulta encontrará todos los registros donde el nombre contiene 'od'.
+
+**Coincidencia con un Patrón Específico con un Solo Carácter**:
+```sql
+SELECT first_name, last_name FROM customer_table WHERE first_name LIKE 'Jas_n';
+```
+Esta consulta encontrará los registros donde el nombre coincide con el patrón 'Jas' seguido de cualquier carácter, y luego 'n'.
+
+**Excluyendo un Patrón Específico**:
+```sql
+SELECT first_name, last_name FROM customer_table WHERE last_name NOT LIKE 'J%';
+```
+Esta consulta encontrará todos los registros donde el apellido no comienza con 'J'..
+
+**Los Wildcards**:
+```sql
+SELECT * FROM customer_table WHERE last_name LIKE 'G\%';
+```
+Esta consulta encontrará todos los registros donde el apellido realmente comienza con 'G%'..
