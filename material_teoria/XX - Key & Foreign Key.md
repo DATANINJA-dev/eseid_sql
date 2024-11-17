@@ -51,4 +51,22 @@ Tabla: costs_business_case
 Estas relaciones permiten unir información de sesiones con los costos asociados a las campañas, obteniendo insights clave sobre el rendimiento de las estrategias de marketing.
 
 ---
+## **Cómo usar ChatGPT para Identificar Claves Primarias y Foráneas**
+
+ChatGPT puede ayudarte a identificar rápidamente las claves primarias y foráneas en tus tablas y a comprender cómo utilizarlas para establecer relaciones.
+
+### **Ejemplo de Uso**
+Puedes pedir a ChatGPT que analice la estructura de tus tablas y sugiera claves primarias y foráneas.
+
+**Prompt:**  
+*"Tengo las siguientes tablas:  
+1. `purchase_business_case` con columnas `booking_id`, `customer_id`, `market_id`, `date_`, `gross_revenue`.  
+2. `sessions_business_case` con columnas `date_`, `market_id`, `utm_source_medium`, `sessions`.  
+¿Qué columnas usarías como claves primarias y foráneas?"*
+
+**Respuesta de ChatGPT:**  
+- En la tabla `purchase_business_case`, usa `booking_id` como clave primaria porque es único para cada transacción.  
+- En la tabla `sessions_business_case`, usa `market_id` como clave foránea, vinculándola a la misma columna en `costs_business_case`.
+
+Esta función puede ser especialmente útil al diseñar esquemas de bases de datos o al escribir consultas SQL para unir datos.
 
