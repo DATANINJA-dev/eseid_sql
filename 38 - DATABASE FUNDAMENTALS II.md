@@ -1,7 +1,5 @@
 # Fundamentos de Data Warehousing - Segunda Parte (Adaptado a eseidGambling)
 
-## Duración Total: 2 horas
-
 ### Objetivos de Aprendizaje
 Al final de esta sesión, los estudiantes podrán:
 - Comprender qué es un Data Warehouse y cómo se utiliza en eseidGambling.
