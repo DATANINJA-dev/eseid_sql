@@ -1,6 +1,6 @@
 # Fundamentos de Bases de Datos - Primera Parte (Adaptado a eseidGambling)
 
-## Duración Total: 2 horas
+## Duración Total
 
 ### Objetivos de Aprendizaje
 Al final de esta sesión, los estudiantes podrán:
