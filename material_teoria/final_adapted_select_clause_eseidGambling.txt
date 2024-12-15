@@ -1,0 +1,93 @@
+
+# Select Clause en el Caso de Uso de eseidGambling
+
+En esta sección, adaptamos el concepto de la cláusula SELECT al caso de uso de **eseidGambling**, utilizando las tablas `sessions`, `cost` y `purchase`. Además, mostraremos cómo puedes utilizar **ChatGPT** para optimizar y entender mejor tus consultas.
+
+---
+
+## **Cláusula SELECT**
+
+La cláusula `SELECT` se utiliza para recuperar datos de una tabla en SQL. En el caso de **eseidGambling**, podemos utilizar esta cláusula para extraer información clave sobre sesiones, costos y transacciones.
+
+### **Ejemplo Básico**
+
+Imagina que necesitas extraer todas las sesiones que provienen de la fuente "google/organic". La consulta sería:
+
+```sql
+SELECT *
+FROM sessions
+WHERE utm_source_medium = 'google/organic';
+```
+
+Este ejemplo selecciona todas las columnas de la tabla `sessions` donde la fuente y el medio sean "google/organic".
+
+---
+
+## **Aplicación Práctica**
+
+### **1. Selección de Columnas Específicas**
+Si solo necesitas ver las columnas `date_` y `sessions`, puedes escribir:
+
+```sql
+SELECT date_, sessions
+FROM sessions;
+```
+
+Esto es útil para simplificar tus consultas y reducir la cantidad de datos que se devuelven.
+
+### **2. Uso de ALIAS**
+Puedes renombrar columnas para facilitar la lectura de los resultados:
+
+```sql
+SELECT date_ AS event_date, sessions AS total_sessions
+FROM sessions;
+```
+
+---
+
+## **Cómo Usar ChatGPT para Mejorar tus Consultas SELECT**
+
+ChatGPT puede ayudarte a escribir, optimizar y depurar tus consultas. Aquí hay algunos ejemplos:
+
+### **1. Generación de Consultas**
+**Prompt:**  
+*"Escribe una consulta SQL para obtener el costo total de las campañas en cada mercado usando la tabla `cost`."*
+
+**Respuesta de ChatGPT:**  
+```sql
+SELECT market_id, SUM(cost_campaign) AS total_cost
+FROM cost
+GROUP BY market_id;
+```
+
+### **2. Explicación de Consultas**
+**Prompt:**  
+*"¿Qué hace esta consulta SQL?*  
+```sql
+SELECT market_id, sessions
+FROM sessions
+WHERE utm_source_medium = 'google/organic';
+```
+
+**Respuesta de ChatGPT:**  
+*"Esta consulta selecciona las columnas `market_id` y `sessions` de la tabla `sessions` para todas las filas donde la fuente y el medio sean 'google/organic'."*
+
+---
+
+## **Práctica en Databricks**
+
+Para ejecutar estas consultas en **Databricks**, asegúrate de haber cargado las tablas adecuadamente como vistas o tablas permanentes. Por ejemplo:
+
+```sql
+CREATE OR REPLACE TEMP VIEW sessions_view AS
+SELECT * FROM sessions;
+```
+
+Luego, puedes usar las consultas anteriores directamente sobre la vista `sessions_view`.
+
+---
+
+## **Conclusión**
+
+La cláusula SELECT es fundamental para interactuar con los datos. Adaptarla al caso de **eseidGambling** permite analizar sesiones, costos y transacciones de manera eficiente. Además, con herramientas como **ChatGPT**, puedes mejorar tu comprensión y habilidades al escribir consultas SQL.
+
