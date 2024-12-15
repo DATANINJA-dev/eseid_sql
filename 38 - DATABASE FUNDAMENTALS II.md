@@ -1,4 +1,4 @@
-# Fundamentos de Data Warehousing - Segunda Parte (Adaptado a eseidGambling)
+# Fundamentos de Data Warehousing - Segunda Parte
 
 ### Objetivos de Aprendizaje
 Al final de esta sesión, los estudiantes podrán:
