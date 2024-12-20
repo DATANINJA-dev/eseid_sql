@@ -1,115 +1,84 @@
-# Sesiones y Desarrollo
+
+# Introducción al Curso: Optimización de Estrategias de Marketing con SQL
+
+## Bienvenida
+
+Bienvenido al curso de SQL aplicado al análisis de datos en el sector del marketing digital. A lo largo de este programa, te sumergirás en un caso práctico basado en una empresa real: **esidGambling**, una plataforma global de gambling que enfrenta desafíos relacionados con la eficiencia de sus campañas publicitarias y la optimización de sus costos.
+
+En este curso aprenderás a extraer, analizar y transformar datos utilizando SQL, desarrollando habilidades que podrás aplicar directamente en situaciones laborales reales.
 
 ---
 
-## **Introducción al Caso Real y Uso de ChatGPT**
+## Contexto del Caso Real
 
-- **Contexto del Curso:**  
-  El curso se basa en una entrevista técnica con una empresa de gambling, explicando cómo utiliza datos de sesiones de usuarios, costos de campañas publicitarias y transacciones para tomar decisiones estratégicas.
+**Historia:**  
+**esidGambling** ha experimentado un rápido crecimiento en los últimos años, lo que ha llevado a una expansión masiva en mercados clave. Sin embargo, con el aumento de la competencia y el crecimiento en los costos publicitarios, la empresa enfrenta desafíos importantes para mantener su rentabilidad.
 
-- **Entrevista Técnica:**  
-  - ¿Cómo mide la empresa la efectividad de sus campañas?  
-  - ¿Qué datos son más relevantes para las decisiones de negocio?
-
-- **ChatGPT:**  
-  Los estudiantes aprenderán a usar **prompting** para optimizar sus consultas SQL y resolver problemas comunes planteados en la entrevista.
+Tu misión como analista de datos será ayudar a la empresa a identificar qué campañas generan el mayor retorno de inversión, cómo optimizar los presupuestos de marketing y cómo identificar patrones estacionales para tomar decisiones estratégicas informadas.
 
 ---
 
-## **Session I - Fundamentos de Bases de Datos**
+## Estructura del Curso
 
-- **Contexto del Caso:**  
-  La empresa utiliza bases de datos relacionales para almacenar datos de marketing y transacciones.
+### **1. Introducción al Caso Real y Uso de ChatGPT**
+- Aprenderás cómo una empresa como **esidGambling** utiliza datos de sesiones, transacciones y costos publicitarios para tomar decisiones estratégicas.
+- Explorarás el uso de ChatGPT para optimizar consultas SQL y resolver problemas comunes de análisis de datos.
 
-- **Entrevista Técnica:**  
-  ¿Qué tecnologías de bases de datos están en uso y cómo estructuran sus datos de manera eficiente?
+### **2. Fundamentos de Bases de Datos**
+- Descubrirás cómo organizar datos en tablas y comprenderás los principios básicos de bases de datos relacionales.
+- Entenderás cómo estructurar datos para optimizar su análisis.
 
-- **Aplicación:**  
-  Explicación de cómo se organizan los datos en tablas que contienen información sobre sesiones, campañas y resultados de ventas.
+### **3. Consultas Básicas en SQL**
+- Comenzarás con las consultas más fundamentales: `SELECT`, `WHERE`, `ORDER BY` y `LIMIT`.
+- Aplicarás estas consultas para extraer datos relevantes del negocio y analizar campañas publicitarias.
 
----
+### **4. Consultas Intermedias**
+- Combinarás datos de múltiples tablas usando `JOIN`.
+- Aprenderás a calcular KPIs como el **Costo por Sesión (CPS)** y el **Retorno de la Inversión Publicitaria (ROAS)**.
+- Utilizarás `GROUP BY` y `HAVING` para analizar datos agregados.
 
-## **Session II - SQL I: Consultas Básicas**
+### **5. Data Warehousing y Diseño de Esquemas**
+- Explorarás cómo estructurar almacenes de datos usando esquemas estrella.
+- Diseñarás estructuras que faciliten el análisis de grandes volúmenes de datos.
 
-- **Consultas SELECT y WHERE:**  
-  Introducción a consultas básicas para extraer datos relevantes del negocio.
-
-  - **Entrevista Técnica:**  
-    ¿Qué preguntas comerciales típicas responden con SQL? Ejemplo: extracción de datos de sesiones y costos de campañas.
-
-  - **Aplicación:**  
-    Recuperar datos de sesiones y filtrar campañas específicas utilizando `SELECT` y `WHERE`.
-
-- **ORDER BY y LIMIT:**  
-  Ordenar y limitar los resultados para identificar las campañas más efectivas.
-
-  - **Aplicación:**  
-    Filtrar y priorizar campañas con mejor retorno de inversión en reportes.
-
-- **INSERT, UPDATE, DELETE:**  
-  Manejo práctico de cómo actualizar o eliminar datos de campañas en la base de datos.
-
-  - **Aplicación:**  
-    Inserción de nuevas campañas, actualización de costos y eliminación de datos obsoletos.
+### **6. Técnicas Avanzadas en SQL**
+- Implementarás funciones avanzadas como `ROW_NUMBER`, `RANK`, y funciones de ventana.
+- Evaluarás tendencias temporales y optimizarás consultas SQL para grandes volúmenes de datos.
 
 ---
 
-## **Session III - SQL II: Consultas Intermedias**
+## Aplicación Práctica
 
-- **JOIN:**  
-  Combinar tablas que incluyen datos de sesiones, costos y transacciones.
+A lo largo del curso trabajarás con tablas reales:
+1. **`purchase`**: Registra transacciones realizadas en la plataforma.
+2. **`costs`**: Detalla costos asociados a campañas publicitarias.
+3. **`sessions`**: Muestra sesiones generadas en la plataforma.
 
-  - **Entrevista Técnica:**  
-    ¿Cómo combina la empresa datos de múltiples fuentes para obtener una visión completa del rendimiento de las campañas?
-
-  - **Aplicación:**  
-    Construir consultas que unan información de campañas publicitarias, costos y resultados de ventas.
-
-- **KPIs del Business Case:**  
-  - **Cost per Session (CPS):** Calcular el costo por sesión de usuario.  
-  - **Revenue:** Relacionar costos de campañas con ingresos generados.  
-  - **ROAS:** Medir el retorno de la inversión publicitaria.
-
-- **GROUP BY y HAVING:**  
-  Agrupar datos por país o campaña y filtrar resultados agregados.
-
-  - **Aplicación:**  
-    Calcular costos totales de campañas por país o por mes, aplicando filtros según criterios comerciales clave.
+Estas tablas te permitirán:
+- Analizar la eficiencia de campañas publicitarias.
+- Calcular KPIs clave como ROAS y CPS.
+- Identificar patrones estacionales y tendencias.
 
 ---
 
-## **Session IV - Tipos de Schemas y Data Warehousing**
+## Objetivos de Aprendizaje
 
-- **Diseño de Esquemas:**  
-  Explicación sobre cómo estructurar un almacén de datos utilizando un **star schema**.
-
-  - **Entrevista Técnica:**  
-    ¿Cómo estructuran los datos para análisis de gran escala y qué tipo de reporting utilizan?
-
-  - **Aplicación:**  
-    Diseñar un esquema estrella que facilite el análisis de campañas y ventas.
+Al finalizar este curso, serás capaz de:
+1. Diseñar y ejecutar consultas SQL eficientes para extraer información clave.
+2. Analizar y presentar insights de datos en un contexto empresarial real.
+3. Optimizar estrategias de marketing digital basadas en datos.
 
 ---
 
-## **Session V - SQL III: Técnicas Avanzadas**
+## Preparación
 
-- **Funciones Avanzadas:**  
-  Uso de funciones como `ROW_NUMBER` o `RANK` para crear rankings de campañas más eficientes.
+Antes de comenzar:
+- Familiarízate con los conceptos básicos de bases de datos relacionales.
+- Asegúrate de tener un entorno SQL configurado.
+- Ten acceso a las tablas `purchase`, `costs`, y `sessions`, que serán tu base de trabajo.
 
-  - **Aplicación:**  
-    Ranking de campañas basado en el retorno de inversión publicitaria o costos por sesión.
+---
 
-- **Window Functions:**  
-  Cálculos avanzados para análisis temporales, como la evaluación de la efectividad de campañas a lo largo del tiempo.
+## Conclusión
 
-  - **Entrevista Técnica:**  
-    ¿Cómo analiza la empresa las tendencias temporales en el rendimiento de sus campañas?
-
-  - **Aplicación:**  
-    Crear consultas para evaluar las campañas más exitosas mes a mes.
-
-- **Optimización de Consultas:**  
-  Implementar mejores prácticas para optimizar el rendimiento de consultas SQL mediante índices y particionamiento de datos.
-
-  - **Aplicación:**  
-    Garantizar que las consultas sobre grandes volúmenes de datos sean eficientes.
+Este curso no solo te ayudará a dominar SQL, sino que también te dará una visión estratégica del análisis de datos en el marketing digital. Prepárate para resolver problemas reales, proponer soluciones prácticas y convertirte en un analista valioso en cualquier equipo.
